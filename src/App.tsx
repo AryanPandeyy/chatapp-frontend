@@ -9,6 +9,7 @@ function App() {
     e.preventDefault();
     socket.emit("message", message);
   };
+
   useEffect(() => {
     socket.on("connect", () => {
       console.log(socket.id);
