@@ -15,7 +15,7 @@ function Login() {
     e.preventDefault();
     await axios
       .post(
-        "http://localhost:3000/login",
+        "https://chatapp-backend-mu.vercel.app/login",
         { username: username, password: password, socketId: socket.id },
         { withCredentials: true },
       )

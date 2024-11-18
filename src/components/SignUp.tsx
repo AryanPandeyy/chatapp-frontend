@@ -12,7 +12,7 @@ function SignUp() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     await axios
-      .post("http://localhost:3000/signup", {
+      .post("https://chatapp-backend-mu.vercel.app/signup", {
         username: username,
         password: password,
       })

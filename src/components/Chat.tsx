@@ -35,7 +35,7 @@ function Chat() {
   }, [currentUser]);
 
   useEffect(() => {
-    axios.get("http://localhost:3000/getUsers").then((result) => {
+    axios.get("http://https://chatapp-backend-mu.vercel.app/getUsers").then((result) => {
       setUsers(result.data);
     });
   }, []);
