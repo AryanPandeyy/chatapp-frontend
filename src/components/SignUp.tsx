@@ -1,7 +1,11 @@
 import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { isUser } from "../user";
 
 function SignUp() {
+  const navigate = useNavigate();
+  const currUser = isUser();
   const [username, setUsername] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [errMsg, setErrMsg] = useState<string>("");
@@ -12,10 +16,17 @@ function SignUp() {
         username: username,
         password: password,
       })
+      .then((res) => navigate("/login"))
       .catch((err) => {
         setErrMsg(err.response.data);
       });
   };
+
+  useEffect(() => {
+    if (currUser) {
+      navigate("/chat");
+    }
+  }, []);
 
   return (
     <>
