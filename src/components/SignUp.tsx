@@ -16,7 +16,9 @@ function SignUp() {
         username: username,
         password: password,
       })
-      .then((res) => navigate("/login"))
+      .then((res) => {
+        console.log(res);
+        navigate("/login")})
       .catch((err) => {
         setErrMsg(err.response.data);
       });

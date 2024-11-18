@@ -19,7 +19,9 @@ function Login() {
         { username: username, password: password, socketId: socket.id },
         { withCredentials: true },
       )
-      .then((res) => navigate("/Chat"))
+      .then((res) => {
+        console.log(res);
+        navigate("/Chat")})
       .catch((err) => setErrMsg(err.response.data));
   };
 
