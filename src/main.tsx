@@ -5,12 +5,11 @@ import "./index.css";
 import Login from "./components/Login";
 import Chat from "./components/Chat";
 import SignUp from "./components/SignUp";
-import App from "./App";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <SignUp />,
   },
   {
     path: "/signup",
